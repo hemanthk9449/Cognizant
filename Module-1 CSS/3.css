@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: darkgreen;
+}
+
+#mainHeader {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+
+.eventCard {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+h3, p {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
