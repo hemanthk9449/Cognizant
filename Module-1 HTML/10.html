@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debugging with DevTools</title>
+  <script>
+    // Example JavaScript code to debug
+    function greetUser() {
+      const user = 'Guest';
+      console.log('Welcome, ' + user);
+      debugger; // Add breakpoint here to inspect variables
+    }
+    window.onload = greetUser;
+  </script>
+  <style>
+    .test-box {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-box" onclick="console.log('Box clicked')">Click me</div>
+</body>
+</html>
