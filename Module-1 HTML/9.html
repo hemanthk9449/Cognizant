@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Geolocation Mapping</title>
+  <script>
+    function findEvents() {
+      if (!navigator.geolocation) {
+        document.getElementById("locationInfo").textContent = "Geolocation not supported.";
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          document.getElementById("locationInfo").textContent =
+            `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+        },
+        (error) => {
+          document.getElementById("locationInfo").textContent = `Error: ${error.message}`;
+        },
+        { enableHighAccuracy: true, timeout: 5000 }
+      );
+    }
+  </script>
+</head>
+<body>
+  <button onclick="findEvents()">Find Nearby Events</button>
+  <p id="locationInfo"></p>
+</body>
+</html>
