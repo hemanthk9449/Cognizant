@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Feedback</title>
+  <script>
+    function validatePhone(input) {
+      const pattern = /^[0-9]{10}$/;
+      if (!pattern.test(input.value)) {
+        alert("Enter a valid 10-digit phone number");
+      }
+    }
+
+    function showFee(select) {
+      const feeMap = { music: "$10", art: "$15" };
+      document.getElementById("feeDisplay").textContent = "Fee: " + (feeMap[select.value] || "N/A");
+    }
+
+    function countCharacters(event) {
+      const length = event.target.value.length;
+      document.getElementById("charCount").textContent = `${length} characters`;
+    }
+
+    function enlargeImage(img) {
+      img.style.width = "300px";
+    }
+
+    function showConfirmation() {
+      alert("Feedback submitted successfully!");
+    }
+  </script>
+</head>
+<body>
+  <form>
+    Phone: <input type="text" onblur="validatePhone(this)" placeholder="10-digit phone"><br><br>
+    Event Type:
+    <select onchange="showFee(this)">
+      <option value="">Select</option>
+      <option value="music">Music</option>
+      <option value="art">Art</option>
+    </select>
+    <p id="feeDisplay"></p>
+
+    <textarea onkeyup="countCharacters(event)" placeholder="Your feedback"></textarea>
+    <p id="charCount"></p>
+
+    <button type="button" onclick="showConfirmation()">Submit Feedback</button>
+  </form>
+
+  <img src="promo.jpg" ondblclick="enlargeImage(this)" width="150" alt="Promo">
+</body>
+</html>
