@@ -1,0 +1,7 @@
+// scss/custom.scss
+
+// Import your variables first (this overrides Bootstrap defaults)
+@import "variables";
+
+// Then import Bootstrap's main SCSS file
+@import "../node_modules/bootstrap/scss/bootstrap";
